@@ -49,9 +49,6 @@ class RPC:
         method_res = query[0].findall("{jabber:iq:rpc}methodResponse")
         if len(method_res) > 1:
             return "Only 1 methodResponse field is permeated"
-        method_name = method_res[0].find("{jabber:iq:rpc}methodName")
-        if len(method_name) > 1:
-            return "Only 1 methodName field is permeated"
         method_res[0].find("{jabber:iq:rpc}params")
 
         return None
