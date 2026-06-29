@@ -127,7 +127,7 @@ class Disco(metaclass=Singleton):
         else:
             return server_info(element)
 
-    def handle_items(self, _, element: ET.Element):
+    async def handle_items(self, _, element: ET.Element):
         to = element.attrib.get("to")
 
         if self._pubsub_jid and to == self._pubsub_jid:
